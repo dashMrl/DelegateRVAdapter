@@ -26,9 +26,9 @@
 
 
 #proguard
-#-keep class com.xiansenliu.delegatervadapter.BaseVH{
+#-keep class com.xiansenliu.delegatervadapter.core.BaseVH{
 #public <init> (android.view.View);
 #}
-#-keepclassmembers class * extends com.xiansenliu.delegatervadapter.BaseVH {
+#-keepclassmembers class * extends com.xiansenliu.delegatervadapter.core.BaseVH {
 #   public <init> (android.view.View);
 #}

@@ -27,15 +27,15 @@ task clean(type: Delete) {
 ext {
 //  SDK and Tools
     compileSdkVersion = 25
-    buildToolsVersion = '26.0.0 rc1'
+    buildToolsVersion = '26.0.0 rc2'
     minSdkVersion = 19
     targetSdkVersion = 25
     versionCode = 1
-    versionName = '1.0.0'
+    versionName = '1.0.1'
     targetCompatibilityVersion = JavaVersion.VERSION_1_8
     sourceCompatibilityVersion = JavaVersion.VERSION_1_8
 }
-def supportLibraryVersion = '25.1.0'
+def supportLibraryVersion = '25.3.1'
 ext.deps = [
 //    Android Support
 appcompat_v7    : "com.android.support:appcompat-v7:$supportLibraryVersion",

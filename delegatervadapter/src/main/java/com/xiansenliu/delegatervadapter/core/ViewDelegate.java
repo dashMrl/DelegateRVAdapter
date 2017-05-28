@@ -1,10 +1,12 @@
-package com.xiansenliu.delegatervadapter;
+package com.xiansenliu.delegatervadapter.core;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,4 +27,5 @@ public interface ViewDelegate {
 
     @LayoutRes
     int getLayoutId();
+
 }

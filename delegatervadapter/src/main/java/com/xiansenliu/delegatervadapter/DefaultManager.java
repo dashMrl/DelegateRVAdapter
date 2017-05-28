@@ -4,8 +4,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.ArrayMap;
-import android.util.Log;
 import android.view.ViewGroup;
+
+import com.xiansenliu.delegatervadapter.core.DelegateManager;
+import com.xiansenliu.delegatervadapter.core.ViewDelegate;
 
 import java.util.Arrays;
 import java.util.List;

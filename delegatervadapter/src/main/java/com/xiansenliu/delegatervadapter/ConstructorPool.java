@@ -4,6 +4,8 @@ import android.util.ArrayMap;
 import android.util.Log;
 import android.view.View;
 
+import com.xiansenliu.delegatervadapter.core.BaseVH;
+
 import java.lang.reflect.Constructor;
 
 /**
