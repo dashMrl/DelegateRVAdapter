@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
 /*
 * 1 apply must have plugins
 * */
@@ -16,7 +19,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
-//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
@@ -26,6 +29,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/kotlin']
+        }
+    }
     compileOptions {
         targetCompatibility rootProject.ext.targetCompatibilityVersion
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
@@ -33,13 +41,14 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-//        exclude group: 'com.android.support', module: 'support-annotations'
-//    })
-    compile deps.recyclerview_v7
-    compile deps.appcompat_v7
-//    testCompile deps.junit
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation deps.kotlin
+    implementation deps.recyclerview_v7
+    implementation deps.appcompat_v7
+    testImplementation deps.junit
 }
 
 /*
@@ -136,4 +145,7 @@ bintray {
             vcsTag = rootProject.ext.versionName
         }
     }
+}
+repositories {
+    mavenCentral()
 }
