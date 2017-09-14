@@ -50,7 +50,10 @@ dependencies {
     implementation deps.appcompat_v7
     testImplementation deps.junit
 }
-
+// solution for javadoc error with kotlin
+tasks.withType(Javadoc).all {
+    enabled = false
+}
 /*
 * 2 definite the POM information
 * */
@@ -72,6 +75,7 @@ task generateSourcesJar(type: Jar) {
 * 4 add javadoc-generating task
 * */
 task generateJavadocs(type: Javadoc) {
+    options.encoding = "utf-8"
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
@@ -80,6 +84,7 @@ task generateJavadocs(type: Javadoc) {
 * 5 add javadocJar-generating task
 * */
 task generateJavadocsJar(type: Jar, dependsOn: generateJavadocs) {
+
     from generateJavadocs.destinationDir
     classifier 'javadoc'
 }
