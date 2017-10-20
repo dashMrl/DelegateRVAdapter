@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
         }
         rv.layoutManager = LinearLayoutManager(this)
         rv.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        val adapter = BaseAdapter(items)
+        val adapter = DelegateAdapter(items)
         adapter.addHolderDelegate(ModelOneDelegate(), ModelTwoDelegate())
         rv.adapter = adapter
+
+
     }
 }

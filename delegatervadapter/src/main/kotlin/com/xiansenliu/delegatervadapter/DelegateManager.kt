@@ -9,10 +9,10 @@ import android.view.ViewGroup
  * Time         4:56 PM
  */
 class DelegateManager(private val items: MutableList<*>) {
-    private val delegateMap = ArrayMap<Class<*>, BaseVHDelegate<*>>()
+    private val delegateMap = ArrayMap<Class<*>, ModelDelegate<*>>()
 
 
-    fun addDelegates(vararg delegates: BaseVHDelegate<*>) {
+    fun addDelegates(vararg delegates: ModelDelegate<*>) {
         for (d in delegates) {
             val clazz = Util.getParameterizedClass(d)
             if (!delegateMap.contains(clazz)) {

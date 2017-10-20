@@ -8,11 +8,11 @@ import android.view.ViewGroup
  * Date         8/28/17
  * Time         4:43 PM
  */
-class BaseAdapter(private val items: MutableList<*>,
-                  private val manager: DelegateManager = DelegateManager(items))
+class DelegateAdapter(private val items: MutableList<*>,
+                      private val manager: DelegateManager = DelegateManager(items))
     : RecyclerView.Adapter<BaseVH>() {
 
-    fun addHolderDelegate(vararg delegates: BaseVHDelegate<*>) {
+    fun addHolderDelegate(vararg delegates: ModelDelegate<*>) {
         manager.addDelegates(*delegates)
     }
 

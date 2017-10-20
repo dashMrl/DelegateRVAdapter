@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.item_model_two.view.*
  * Date         9/14/17
  * Time         7:29 PM
  */
-class ModelTwoDelegate : BaseVHDelegate<ModelTwo>() {
+class ModelTwoDelegate : ModelDelegate<ModelTwo>() {
     override fun createVH(parent: ViewGroup?, position: Int, items: MutableList<*>): BaseVH {
         val view = LayoutInflater.from(parent!!.context).inflate(R.layout.item_model_two, parent, false)
         return VH(view)

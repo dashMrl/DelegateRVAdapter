@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.item_model_one_another.view.*
  * Date         9/14/17
  * Time         6:53 PM
  */
-class ModelOneDelegate : BaseVHDelegate<ModelOne>() {
+class ModelOneDelegate : ModelDelegate<ModelOne>() {
     override fun createVH(parent: ViewGroup?, position: Int, items: MutableList<*>): BaseVH {
         val inflater = LayoutInflater.from(parent!!.context)
         return if (position % 4 == 0) {
