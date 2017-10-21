@@ -8,7 +8,7 @@ import android.view.ViewGroup
  * Date         8/28/17
  * Time         4:43 PM
  */
-class DelegateAdapter(items: MutableList<Any>,
+class DelegateAdapter(items: List<Any>,
                       private val manager: DelegateManager = DelegateManager())
     : RecyclerView.Adapter<BaseVH<Any>>() {
     private var items: MutableList<Any> = mutableListOf()
