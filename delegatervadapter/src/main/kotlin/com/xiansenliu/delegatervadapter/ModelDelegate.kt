@@ -7,9 +7,12 @@ import android.view.ViewGroup
  * Date         8/28/17
  * Time         7:31 PM
  */
-abstract class ModelDelegate<in T> {
-    fun canDelegate(t: T): Boolean = false
+abstract class ModelDelegate<in T : Any> {
+    fun canDelegate(t: T): Boolean {
 
-    abstract fun createVH(parent: ViewGroup?, position:Int,items: MutableList<*>): BaseVH
+        return true
+    }
+
+    abstract fun createVH(parent: ViewGroup?, position: Int, items: MutableList<*>): BaseVH<T>
 
 }

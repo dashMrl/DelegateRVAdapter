@@ -1,6 +1,5 @@
 package com.xiansenliu.delegatervadapter
 
-import android.util.Log
 import java.lang.reflect.ParameterizedType
 
 /**
@@ -13,10 +12,6 @@ class Util {
         fun getParameterizedClass(d: ModelDelegate<*>): Class<*> {
             val dataType = (d.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments.first() as Class<*>
             return dataType
-        }
-
-        fun log(tag: String = "Log", msg: String) {
-            Log.i(tag, msg)
         }
     }
 }
