@@ -44,7 +44,7 @@ class DelegateAdapter(items: List<Any>,
     fun updateItems(items: List<Any>) {
         with(this.items) {
             clear()
-            add(items)
+            addAll(items)
         }
         notifyDataSetChanged()
     }
