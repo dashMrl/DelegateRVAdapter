@@ -8,8 +8,8 @@ import android.view.ViewGroup
  * Date         8/28/17
  * Time         4:43 PM
  */
-class DelegateAdapter(items: List<Any>,
-                      private val manager: DelegateManager = DelegateManager())
+open class DelegateAdapter(items: List<Any>,
+                           private val manager: DelegateManager = DelegateManager())
     : RecyclerView.Adapter<BaseVH<Any>>() {
     private var items: MutableList<Any> = mutableListOf()
 
@@ -22,6 +22,10 @@ class DelegateAdapter(items: List<Any>,
     }
 
     override fun getItemCount(): Int {
+        return items.size
+    }
+
+    open fun getActualItemCount(): Int {
         return items.size
     }
 
