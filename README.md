@@ -46,7 +46,7 @@ rv.adapter = adapter
 
 ## How to integrate
 ```groovy
-implementation "com.xiansenliu.delegatervadapter:delegatervadapter:1.0.2"
+implementation "com.github.xiansenLiu:DelegateRVAdapter:v1.0.6"
 ```
 
 
