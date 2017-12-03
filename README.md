@@ -1,5 +1,6 @@
 # DelegateRVAdapter
-a simple adapter for recyclerView with multi-item
+[![](https://jitpack.io/v/xiansenLiu/DelegateRVAdapter.svg)](https://jitpack.io/#xiansenLiu/DelegateRVAdapter) 
+A simple adapter for recyclerView with multi-item
 
 ## How to use (in Kotlin)
 
@@ -51,8 +52,21 @@ If you want to add a header or footer ,just create your data class 、BaseVh and
 
 
 ## How to integrate
+- Step 1. Add the JitPack repository to your build file
+Add it in your root build.gradle at the end of repositories:
 ```groovy
-implementation "com.github.xiansenLiu:DelegateRVAdapter:v1.0.7"
+allprojects {
+    repositories {
+        //...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+- Step 2. Add the dependency
+```groovy
+dependencies{
+    implementation "com.github.xiansenLiu:DelegateRVAdapter:v1.0.7"
+}
 ```
 
 
