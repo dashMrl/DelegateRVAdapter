@@ -18,7 +18,10 @@ open class DelegateAdapter(items: List<Any>,
     }
 
     fun addHolderDelegate(vararg delegates: ModelDelegate<*>) {
-        manager.addDelegates(*delegates)
+        for (delegate in delegates) {
+            delegate.adapter = this
+            manager.addDelegates(delegate)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -8,6 +8,8 @@ import android.view.ViewGroup
  * Time         7:31 PM
  */
 abstract class ModelDelegate<in T : Any> {
+    lateinit var adapter: DelegateAdapter
+
     fun canDelegate(t: T): Boolean {
 
         return true

@@ -1,5 +1,6 @@
 package com.xiansenliu.delegatervadapter
 
+import android.util.ArrayMap
 import java.lang.reflect.ParameterizedType
 
 /**
@@ -12,6 +13,11 @@ class Util {
         fun getParameterizedClass(d: ModelDelegate<*>): Class<*> {
             val dataType = (d.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments.first() as Class<*>
             return dataType
+        }
+
+        fun <K, V> findInMap(am: ArrayMap<K, V>, key: K): Int {
+            return (0 until am.size).firstOrNull { am.keyAt(it) == key }
+                    ?: UNSUPPORTED_VIEW_TYPE
         }
     }
 }

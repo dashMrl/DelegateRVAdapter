@@ -48,7 +48,7 @@ class DelegateManager {
             if (i != null) {
                 return i
             } else {
-                val type = map.indexOfKeyCompatible(key)
+                val type = Util.findInMap(map, key)
                 indexCache.put(key, type)
                 return type
             }

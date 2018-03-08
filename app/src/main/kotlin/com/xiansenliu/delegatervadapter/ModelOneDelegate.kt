@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.item_model_one.view.*
  */
 class ModelOneDelegate : ModelDelegate<ModelOne>() {
     override fun createVH(parent: ViewGroup?, position: Int, items: MutableList<*>): BaseVH<ModelOne> {
+
         val inflater = LayoutInflater.from(parent!!.context)
         Log.i("Delegate", "VH")
         val view = inflater.inflate(R.layout.item_model_one, parent, false)
