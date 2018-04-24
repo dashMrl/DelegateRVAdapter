@@ -11,6 +11,8 @@ import android.view.ViewGroup
 open class DelegateAdapter(items: List<Any>,
                            private val manager: DelegateManager = DelegateManager())
     : RecyclerView.Adapter<BaseVH<Any>>() {
+
+
     private var items: MutableList<Any> = mutableListOf()
 
     init {
@@ -38,15 +40,14 @@ open class DelegateAdapter(items: List<Any>,
         return type
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseVH<Any> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseVH<Any> {
         val vh = manager.onCreateViewHolder(parent, viewType, items)
         return vh
     }
 
-    override fun onBindViewHolder(holder: BaseVH<Any>?, position: Int) {
+    override fun onBindViewHolder(holder: BaseVH<Any>, position: Int) {
         manager.onBindViewHolder(holder, position, items)
     }
-
 
     fun updateItems(items: List<Any>) {
         with(this.items) {

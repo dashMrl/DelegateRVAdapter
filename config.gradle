@@ -1,15 +1,15 @@
-def kotlin_version = '1.2.21'
-def anko_version = '0.10.1'
-def support_lib_version = '27.0.2'
+def kotlin_version = '1.2.31'
+def anko_version = '0.10.2'
+def support_lib_version = '27.1.1'
 
 ext {
     android = [
             compileSdkVersion         : 27,
-            buildToolsVersion         : '27.0.3',
+            buildToolsVersion         : '28.0.0-rc1',
             minSdkVersion             : 19,
             targetSdkVersion          : 27,
             versionCode               : 1,
-            versionName               : '1.0.8',
+            versionName               : '1.0.9',
             targetCompatibilityVersion: JavaVersion.VERSION_1_8,
             sourceCompatibilityVersion: JavaVersion.VERSION_1_8
     ]
